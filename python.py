@@ -13,7 +13,6 @@ def main():
     print("Enter the elements of the first vector:")
     vector1 = get_vector_input("Vector 1: ")
 
-    print("Enter the elements of the second Vector:")
     vector2 = get_vector_input("Vector 2: ")
 
     if len(vector1) != len(vector2):
@@ -21,7 +20,8 @@ def main():
         return
 
     result = dot_product(vector1, vector2)
-    print(f"The Dot Product Of The Vectors is: {result}")
+    print("Dot Product:")
+    print(f"{result}")
 
 if __name__ == "__main__":
     main()
