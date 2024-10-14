@@ -13,7 +13,7 @@ def main():
     print("Enter the elements of the first vector:")
     vector1 = get_vector_input("Vector 1: ")
 
-    print("Enter the elements of the second vector:")
+    print("Enter the elements of the second Vector:")
     vector2 = get_vector_input("Vector 2: ")
 
     if len(vector1) != len(vector2):
