@@ -21,7 +21,7 @@ def main():
         return
 
     result = dot_product(vector1, vector2)
-    print(f"The dot product of the vectors is: {result}")
+    print(f"The Dot Product Of The Vectors is: {result}")
 
 if __name__ == "__main__":
     main()
