@@ -1,7 +1,11 @@
 import numpy as np
 
-a=7+9j
-b=6+5j
+
+
+#trying to arise conflict eroor
+a=1+2j
+b=2+3j
+
 
 print(np.dot(a,b))
 
