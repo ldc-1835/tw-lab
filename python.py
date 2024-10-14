@@ -10,10 +10,10 @@ def dot_product(vector1, vector2):
     return sum(x * y for x, y in zip(vector1, vector2))
 
 def main():
-    print("Enter the elements of the first vector:")
+    print("Enter the elements of the first Vector:")
     vector1 = get_vector_input("Vector 1: ")
 
-    print("Enter the elements of the second vector:")
+    print("Enter the elements of the second Vector:")
     vector2 = get_vector_input("Vector 2: ")
 
     if len(vector1) != len(vector2):
