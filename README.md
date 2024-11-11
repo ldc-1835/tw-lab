@@ -5,12 +5,19 @@
 
 # STYLING 
 1.**Bold Text**
+
 2.*Italics*
+
 3.~~Strikethrough~~
+
 4.**likhit _chaudhari_**
+
 5.***all bold and italic***
+
 6.This is a <sub>subscript text</sub>
+
 7.This is a <sup>superscript text</sup>
+
 8.This is an <ins>underlined</ins> line
 
 
@@ -43,7 +50,20 @@ Here is a simple footnote[^1]
 
 # ALERTS 
 > [!NOTE]
-> Useful info for the user to work on.
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info.
+
+> [!CAUTION]
+> Advises about risks  of certain actions.
+
 
 # TABLES 
 | Merge sort | Quicksort |
