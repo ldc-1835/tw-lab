@@ -4,14 +4,14 @@
 #### heading 3 
 
 # STYLING 
-**Bold Text**
-*Italics*
-~~Strikethrough~~
-**likhit _chaudhari_**
-***all bold and italic***
-This is a <sub>subscript text</sub>
-This is a <sup>superscript text</sup>
-This is an <ins>underlined</ins> line
+1.**Bold Text**
+2.*Italics*
+3.~~Strikethrough~~
+4.**likhit _chaudhari_**
+5.***all bold and italic***
+6.This is a <sub>subscript text</sub>
+7.This is a <sup>superscript text</sup>
+8.This is an <ins>underlined</ins> line
 
 
 # QUOTING TEXT
