@@ -10,6 +10,9 @@
 **likhit _chaudhari_**
 ***all bold and italic***
 This is a <sub>subscript text</sub>
+This is a <sup>superscript text</sup>
+This is an <ins>underlined</ins> line
+
 
 # QUOTING TEXT
 Not quoted
