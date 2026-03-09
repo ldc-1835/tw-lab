@@ -1,0 +1,72 @@
+INSTALL
+sudo apt install -y openssl libssl-dev build-essential xxd wireshark
+
+GEN RSA 
+openssl genrsa -out private.key 2048
+openssl rsa -in private.key -pubout -out public.key
+(enc) openssl rsautl -encrypt -inkey public.key -pubin -in message.txt -out encrypted.bin 
+(dec) openssl rsautl -decrypt -inkey private.key -in encrypted.bin -out decrypted.txt
+or
+openssl genpkey -algorithm RSA -out rsa_key.pem -pkeyopt rsa_keygen_bits:2048
+openssl pkey -in rsa_key.pem -text -noout
+openssl pkey -in rsa_key.pem -pubout -out rsa_public.pem
+echo "Hello CNS Lab" > message.txt
+openssl pkeyutl \
+  -encrypt \
+  -pubin \
+  -inkey rsa_public.pem \
+  -in message.txt \
+  -out encrypted.bin
+openssl pkeyutl \
+  -decrypt \
+  -inkey rsa_key.pem \
+  -in encrypted.bin \
+  -out decrypted.txt
+cat decrypted.txt
+
+
+SELF CERTF
+openssl req -new -x509 -key private.key -out cert.pem -days 365
+
+CERT REQ
+openssl req -new -key rsa_key.pem -out request.csr
+
+(view)openssl x509 -in cert.pem -text -noout
+
+RSA SIGN OR DIG SIG
+openssl dgst -sha256 -sign private.key -out sign.bin message.txt 
+(ver) openssl dgst -sha256 -verify public.key -signature sign.bin message.txt
+
+HMAC GEN
+openssl dgst -sha256 -hmac "secretkey" message.txt 
+
+CMAC USING AES 
+openssl cmac -cipher aes-128-cbc -macopt hexkey:00112233445566778899aabbccddeeff message.txt
+
+SYM AES
+openssl enc -aes-256-cbc -salt -in message.txt -out cipher.bin
+openssl enc -aes-256-cbc -d -in cipher.bin -out recovered.txt
+
+MD5 PSWD HASH
+$1$ → MD5
+salt → random value
+hash → encrypted password 
+openssl passwd -1 -salt abcd test 
+
+COMPUTE HASH
+openssl dgst -sha256 message.txt
+
+ECB
+openssl enc -aes-256-ecb -in file.txt -out cipher.bin
+
+CBC
+openssl enc -aes-256-cbc -in file.txt -out cipher.bin
+
+DH
+openssl genpkey -genparam -algorithm DH -out dh_param.pem
+openssl genpkey -paramfile dh_param.pem -out alice.key 
+openssl pkey -in alice.key -pubout -out alice_pub.pem 
+
+B64
+openssl enc -base64 -in file.txt -out encoded.txt
+openssl enc -base64 -d -in encoded.txt -out decoded.txt
